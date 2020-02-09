@@ -7,5 +7,5 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function handleTodayWord(todayWordObject) {
   var toDisplayedWord = todayWordObject.word + ':' + todayWordObject.description;
-  Push.create('Your word today', { requireInteraction: true, body: toDisplayedWord });
+  Push.create('Your word today', { body: toDisplayedWord });
 }
