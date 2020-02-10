@@ -25,7 +25,8 @@ function handleTodayWord(todayWordObject) {
         body: "It's your new word today",
         onClick: function () {
           window.focus();
-          window.location.href = 'https://stwart-nguyen.github.io/daily_english?' + convertShallowObjectToQueryString(todayWordObject);
+          window.location.search = '?' + convertShallowObjectToQueryString(todayWordObject);
+          this.close();
         }
       }
     )
