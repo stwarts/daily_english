@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var queryStringObject = convertToHash(location.search.substring(1));
   if (queryStringObject.word && queryStringObject.word.length) {
     document.getElementById('word').innerHTML = queryStringObject.word;
-    document.getElementById('description').innerHTML = queryStringObject.description;
+    document.getElementById('description').innerHTML = queryStringObject.description || '';
   }
   else {
     var todayWordAppUrl = 'https://script.googleusercontent.com/macros/echo?user_content_key=L9_Dwf3Cokmuqikrn6idlwBnyasW-oct5paAem8WcmEE-3QdQyz0T0SwMoRsqNVUuH9Ep3fgeRuv7_k_MJLngwkNLssVPuIim5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnMkVWVuhZ_Ji_EDpXzjFnhu_Mr0dzpsTYKImT7wl107dR215DsJXeljVUVBnrrGuSN9SeJxDBnhlQWnTxpm2YOUUMTLGEaH11Q&lib=MLQcu4JvbhZZsWmuFIMFbPQqLiycxbmrY';
