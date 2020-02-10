@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var queryStringObject = convertToHash(location.search.substring(1));
   if (queryStringObject.word && queryStringObject.word.length) {
     document.getElementById('word').innerHTML = queryStringObject.word;
+    document.getElementById('search-google').href = 'https://www.google.com/search?q=' + encodeURIComponent(queryStringObject.word);
     document.getElementById('description').innerHTML = queryStringObject.description || '';
   }
   else {
