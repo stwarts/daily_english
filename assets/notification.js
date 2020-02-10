@@ -25,7 +25,7 @@ function handleTodayWord(todayWordObject) {
         body: "It's your new word today",
         onClick: function () {
           window.focus();
-          window.location.href = 'https://stwart-nguyen.github.io/daily_english?' + new URLSearchParams(todayWordObject).toString();
+          window.location.href = 'https://stwart-nguyen.github.io/daily_english?' + convertShallowObjectToQueryString(todayWordObject);
         }
       }
     )
@@ -34,9 +34,17 @@ function handleTodayWord(todayWordObject) {
 
 function convertToHash(queryString) {
   if (queryString && queryString.length && queryString.search('=') >= 0) {
-    return JSON.parse('{"' + decodeURI(queryString).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g, '":"') + '"}');
+    return JSON.parse('{"' + decodeURIComponent(queryString).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g, '":"') + '"}');
   }
   else {
     return {};
   }
+}
+
+function convertShallowObjectToQueryString(object) {
+  var queryString = Object.keys(object).map(function (key) {
+    return encodeURIComponent(key) + '=' + encodeURIComponent(object[key])
+  }).join('&');
+
+  return queryString;
 }
