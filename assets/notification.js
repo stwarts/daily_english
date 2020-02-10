@@ -34,7 +34,7 @@ function handleTodayWord(todayWordObject) {
 
 function convertToHash(queryString) {
   if (queryString && queryString.length && queryString.search('=') >= 0) {
-    return JSON.parse('{"' + decodeURIComponent(queryString).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g, '":"') + '"}');
+    return JSON.parse('{"' + decodeURIComponent(queryString).replace(/\+/g, ' ').replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g, '":"') + '"}');
   }
   else {
     return {};
