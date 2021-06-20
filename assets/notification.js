@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     showTodayWord(queryStringObject);
   }
   else {
-    var todayWordAppUrl = 'https://script.google.com/macros/s/AKfycbyEN5E71Yy9RROSXgIpCtzn1SJvXdJqYBrqVHk3z63M5uTcrLHaqVyU5D_IzC5WqOIm/exec';
+    var todayWordAppUrl = 'https://script.google.com/macros/s/AKfycbwabFSQZITkEfwhXg1yjrWmuuVuF3yDuSNYdM7SilsNWp-ZJVjSPZ41e-Ar9GLwNjx3/exec';
     var s = document.createElement('script');
     s.src = todayWordAppUrl;
     document.body.appendChild(s);
